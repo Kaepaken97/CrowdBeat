@@ -1,0 +1,50 @@
+<mat-grid-list class="large-screen" cols="6" rowHeight="10%" gutterSize="0">
+  <mat-grid-tile [colspan]="6" [rowspan]="2">
+    <div class="title">
+      <h1>{{eventTitle}}</h1>
+      <h3>Code: {{eventCode}}</h3>
+    </div>
+    <div class="options">
+      <button mat-mini-fab color="accent">
+        <mat-icon aria-hidden="false" (click)="helpModal()">help</mat-icon>
+      </button>
+    </div>
+  </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="8">
+      <app-search 
+        [playlistID]="playlist.id"
+        (refreshParent)="refresh()"></app-search>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="4" [rowspan]="8">
+      <app-playlist-display 
+        [eventCode]="eventCode"
+        [playlist]="playlist"
+        (refreshParent)="refresh()"></app-playlist-display>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list class="small-screen" cols="6" rowHeight="5%" gutterSize="0">
+  <mat-grid-tile [colspan]="6" [rowspan]="4">
+    <div class="title">
+      <h1>{{eventTitle}}</h1>
+      <h3>Code: {{eventCode}}</h3>
+    </div>
+    <div class="options">
+      <button mat-mini-fab color="accent">
+        <mat-icon aria-hidden="false" (click)="helpModal()">help</mat-icon>
+      </button>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="6" [rowspan]="10">
+    <app-playlist-display 
+      [eventCode]="eventCode"
+      [playlist]="playlist"
+      (refreshParent)="refresh()"></app-playlist-display>
+  </mat-grid-tile>
+    <mat-grid-tile [colspan]="6" [rowspan]="8">
+      <app-search 
+        [playlistID]="playlist.id"
+        (refreshParent)="refresh()"></app-search>
+    </mat-grid-tile>
+</mat-grid-list>
+  

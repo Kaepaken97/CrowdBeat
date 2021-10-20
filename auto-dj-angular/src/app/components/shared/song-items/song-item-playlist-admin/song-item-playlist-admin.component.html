@@ -1,0 +1,16 @@
+<mat-card [ngClass]="{'currentTrack' : item.isCurrentlyPlaying}">
+  <mat-card-title>{{item.title}}</mat-card-title>
+  <mat-card-content>
+    {{item.artist}}
+    <button mat-mini-fab color="accent">
+      <mat-icon aria-hidden="false" (click)="forceToTop()">arrow_upward</mat-icon>
+    </button>
+    <button mat-mini-fab color="accent">
+      <mat-icon aria-hidden="false" (click)="remove()">delete</mat-icon>
+    </button>
+    <button mat-mini-fab color="accent">
+      <mat-icon aria-hidden="false" (click)="ban()">cancel</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
+<br />

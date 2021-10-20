@@ -1,0 +1,33 @@
+<div class="main">
+    <div class="currently-playing">
+        <div class="song-image">
+            <img *ngIf="currentlyPlayingTrack.images && currentlyPlayingTrack.images[2]" [src]="currentlyPlayingTrack.images[2].url" alt="Album Art">
+        </div>
+        <div class="song-info">
+            <p class="title">{{currentlyPlayingTrack.title}}</p>
+            <p class="artist">{{currentlyPlayingTrack.artist}}</p>
+        </div>
+    </div>
+    <div class="player">
+        <button mat-mini-fab color="accent">
+            <mat-icon aria-hidden="false" (click)="previousTrack()">skip_previous</mat-icon>
+        </button>
+        <div class="space"></div>
+        <button mat-mini-fab color="primary" *ngIf="playButton">
+            <mat-icon aria-hidden="false" (click)="play()">play_arrow</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" *ngIf="!playButton">
+            <mat-icon aria-hidden="false" (click)="pause()">pause</mat-icon>
+        </button>
+        <div class="space"></div>
+        <button mat-mini-fab color="accent">
+            <mat-icon aria-hidden="false" (click)="nextTrack()">skip_next</mat-icon>
+        </button>
+    </div>
+    <div class="device">
+        <mat-slider min="0" max="100" step="1" value="0" (change)="updateVolume($event)"></mat-slider>
+        <button mat-mini-fab color="accent">
+            <mat-icon aria-hidden="false" (click)="openDialog()">devices</mat-icon>
+        </button>
+    </div>
+</div>

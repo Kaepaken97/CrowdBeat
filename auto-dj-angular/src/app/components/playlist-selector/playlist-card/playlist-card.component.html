@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card-title>
+        {{playlist.name}}
+    </mat-card-title>
+    <mat-card-content>
+        <img *ngIf="playlist.images[1]" [src]="playlist.images[1].url" alt="Album Art">
+        <div class="img-replacement" *ngIf="!playlist.images[1]">?</div>
+        <button mat-flat-button color="primary" (click)="onHost()">{{buttonText}}</button>
+    </mat-card-content>
+</mat-card>

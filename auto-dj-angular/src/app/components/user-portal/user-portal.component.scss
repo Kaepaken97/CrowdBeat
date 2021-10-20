@@ -1,0 +1,43 @@
+app-search {
+    height: 100%;
+    width: 100%;
+}
+
+app-playlist-display {
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.options {
+  padding: 10px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+@media screen and (min-width: 701px) {
+  .large-screen{
+    display: block;
+  }
+  .small-screen {
+    display: none;
+  }
+  .title {
+    padding: 70px 0;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .large-screen{
+    display: none;
+  }
+  .small-screen {
+    display: block;
+  }
+}

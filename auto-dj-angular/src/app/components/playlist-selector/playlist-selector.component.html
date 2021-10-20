@@ -1,0 +1,18 @@
+<div class="title">
+    <h1>Hosting an Event</h1>
+    <h3>These are all the playlists you have made or favorited on your Spotify account.</h3>
+    <h3>AutoDJ can either create a new playlist or copy the items on any of the playlists below.  Choose one of these options to start your event.</h3>
+</div>
+    <mat-tab-group>
+        <mat-tab label="Host Existing Event">
+            <div class="all-playlists">
+                <new-playlist-card></new-playlist-card>
+                <playlist-card *ngFor="let playlist of eventPlaylists;" [playlist]=playlist [doesPlaylistHaveEvent]="true"></playlist-card>
+            </div>
+        </mat-tab>
+        <mat-tab label="Copy a Playlist">
+            <div class="all-playlists">
+                <playlist-card *ngFor="let playlist of playlists;" [playlist]=playlist [doesPlaylistHaveEvent]="false"></playlist-card>
+            </div>
+        </mat-tab>
+    </mat-tab-group>

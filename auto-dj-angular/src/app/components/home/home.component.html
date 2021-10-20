@@ -1,0 +1,25 @@
+<div class="header">
+    <!-- <button mat-raised-button color="primary" (click)="getAutoDJToken()">Temporary AutoDJ Token Button</button> -->
+    <button mat-raised-button color="primary" (click)="hostLogin()">Host Login</button>
+    <h1>CrowdBeat</h1>
+</div>
+<div class="enter-event">
+    <h2>Event Code</h2>
+    <mat-form-field floatLabel="auto" appearance="outline">
+        <mat-label>Event Code</mat-label>
+        <input matInput required [(ngModel)]='eventCode'>
+    </mat-form-field>
+    <br/>
+    <span *ngIf="validateEventCode" class="alert">Enter a valid Event Code before continuing.</span>
+    <br/><br/>
+    <h2>Name</h2>
+    <mat-form-field floatLabel="auto" appearance="outline">
+        <mat-label>Display Name</mat-label>
+        <input matInput required [(ngModel)]='displayName'>
+        <mat-hint align="end">Min 5 characters</mat-hint>
+    </mat-form-field>
+    <br/>
+    <span *ngIf="validateDisplayName" class="alert">Enter your 5 character minimum Display Name before continuing.</span>
+    <br/>
+    <button mat-raised-button color="primary" (click)="start()">Start</button>
+</div>

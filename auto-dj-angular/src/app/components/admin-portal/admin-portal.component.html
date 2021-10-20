@@ -1,0 +1,45 @@
+<mat-grid-list cols="6" rowHeight="10%" gutterSize="0">
+  <mat-grid-tile [colspan]="6" [rowspan]="2">
+    <div class="title">
+      <h1>{{event.eventName}}</h1>
+      <h3>Code: <span>{{event.eventCode}}</span></h3>
+    </div>
+    <div class="options">
+      <button mat-mini-fab color="accent">
+        <mat-icon aria-hidden="false" (click)="resetCurrentlyPlayingTrack()">settings_backup_restore</mat-icon>
+      </button>
+      <button mat-mini-fab color="accent">
+        <mat-icon aria-hidden="false" (click)="manageUsersModal()">supervisor_account</mat-icon>
+      </button>
+      <button mat-mini-fab color="accent">
+        <mat-icon aria-hidden="false" (click)="noPlayListModal()">list_alt</mat-icon>
+      </button>
+      <button mat-mini-fab color="accent">
+        <mat-icon aria-hidden="false" (click)="settingsModal()">settings</mat-icon>
+      </button>
+      <button mat-mini-fab color="accent">
+        <mat-icon aria-hidden="false" (click)="helpModal()">help_outline</mat-icon>
+      </button>
+    </div>
+  </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="7">
+      <app-search 
+        [playlistID]="playlist.id"
+        [mode]="'admin'"
+        (refreshParent)="refresh()"></app-search>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="4" [rowspan]="7">
+      <app-playlist-display 
+        [eventCode]="event.eventCode"
+        [playlist]="playlist"
+        [type]="'host'"
+        (refreshParent)="refresh()"></app-playlist-display>
+  </mat-grid-tile>
+    <mat-grid-tile [colspan]="6" [rowspan]="1">
+      <app-media-player 
+        [activePlaylistID]="playlist.id" 
+        [currentlyPlayingTrack]="currentlyPlayingTrack"
+        (updateTrack)="updateCurrentlyPlayingTrack($event)"></app-media-player>
+    </mat-grid-tile>
+</mat-grid-list>
+  

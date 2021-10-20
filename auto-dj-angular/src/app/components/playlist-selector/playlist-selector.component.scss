@@ -1,0 +1,19 @@
+.all-playlists {
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+    column-gap:15px;
+    row-gap: 15px;
+    padding: 30px;
+}
+
+.title {
+    width: 100%;
+    padding: 30px;
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    h3 {
+        padding-left: 25px;
+    }
+  }

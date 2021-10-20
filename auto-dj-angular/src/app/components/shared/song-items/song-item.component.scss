@@ -1,0 +1,27 @@
+button {
+    float: right;
+    margin: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.currentTrack {
+    background-color: lightgray;
+}
+
+.currentTrack:hover {
+    background-color: gray;
+}
+
+mat-card-content {
+    padding-left: 20px;
+}
+
+mat-card:hover {
+    background-color: lightgray;
+}
+
+mat-card-title {
+    font-size: 15px;
+}

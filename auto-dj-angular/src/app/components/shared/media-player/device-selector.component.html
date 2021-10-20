@@ -1,0 +1,7 @@
+<h2>Choose Playback Device</h2>
+<div mat-mini-fab color="primary" *ngFor="let device of data">
+    <button>
+        <mat-icon aria-hidden="false" (click)="onDeviceSelected(device)">add_to_queue</mat-icon>
+    </button>
+    <h3>{{device.name}}</h3>
+</div>

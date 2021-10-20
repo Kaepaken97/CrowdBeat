@@ -1,0 +1,26 @@
+<div class="main scrollable-content">
+    <div class="search-bar">
+        <mat-form-field appearance="outline">
+            <mat-label>Search</mat-label>
+            <form (submit)="search()">
+                <input [(ngModel)] = "searchValue" [ngModelOptions]="{standalone: true}" matInput/>
+            </form>
+        </mat-form-field>
+        <button mat-mini-fab color="accent">
+            <mat-icon aria-hidden="false" (click)="search()">search</mat-icon>
+        </button>
+    </div>
+    <div class="results" *ngIf="mode != 'admin'">
+        <song-item-search-user
+            *ngFor="let item of results" 
+            [item]="item"
+            [playlistId]="playlistID"></song-item-search-user>
+    </div>
+    <div class="results" *ngIf="mode == 'admin'">
+        <song-item-search-admin
+            *ngFor="let item of results" 
+            [item]="item"
+            [playlistId]="playlistID"
+            (refreshParent)="refresh()"></song-item-search-admin>
+    </div>
+</div>

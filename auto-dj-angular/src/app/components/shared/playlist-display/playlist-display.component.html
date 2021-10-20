@@ -1,0 +1,31 @@
+<mat-card class="scrollable-content">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <img *ngIf="playlist.images[2]" [src]="playlist.images[2].url" alt="Album Art">
+    </div>
+    <mat-card-title>{{playlist.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf="playlist.songs.length == 0" class="no-tracks">
+      <mat-card>
+        <mat-card-title>No Tracks</mat-card-title>
+        <mat-card-content>
+          There are no tracks in this playlist to display.
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div *ngIf="type=='host'">
+      <song-item-playlist-admin *ngFor="let item of playlist.songs" 
+        [item]="item"
+        [playlistId]="playlist.id"
+        (refreshParent)="refresh()"></song-item-playlist-admin>
+    </div>
+    <div *ngIf="type=='participant'">
+      <song-item-playlist-user *ngFor="let item of playlist.songs" 
+        [item]="item"
+        [playlistId]="playlist.id"
+        [isVoted]="isVotedBySelf(item.trackURI)"
+        (refreshParent)="refresh()"></song-item-playlist-user>
+    </div>
+  </mat-card-content>
+</mat-card>

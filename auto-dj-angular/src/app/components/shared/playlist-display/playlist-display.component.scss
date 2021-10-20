@@ -1,0 +1,40 @@
+.scrollable-content {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  > .mat-card-header {
+    > img{display:inline;}
+    > .mat-card-title{display:inline;}
+  }
+
+  > .mat-card-title-group {
+    display: block;
+  }
+
+  > .mat-card-content {
+    overflow-y: auto;
+  }
+}
+mat-card-content {
+    padding-right: 15px;
+}
+  
+  mat-card-header {
+    height: 60px;
+    padding: 5px;
+    mat-card-title {
+      padding: 20px 0;
+      padding-left: 20px;
+    }
+  }
+
+.no-tracks {
+  mat-card-content {
+    padding-left: 20px;
+  }
+  mat-card-title {
+    font-size: 15px;
+  }
+}

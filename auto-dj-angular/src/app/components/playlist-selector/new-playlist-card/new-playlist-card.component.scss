@@ -1,0 +1,28 @@
+.mat-card-title {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+  .img-replacement {
+    height: 300px;
+    position: relative;
+    top: 150px;
+    font-size: 100px;
+}
+
+.mat-card {
+    border:solid 2px green;
+}
+
+.mat-card-content {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1;
+    row-gap: 10px;
+    button {
+        width: 40%;
+        left: 30%;
+        padding: 10px;
+    }
+}

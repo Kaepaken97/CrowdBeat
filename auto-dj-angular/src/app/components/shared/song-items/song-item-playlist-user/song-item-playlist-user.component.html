@@ -1,0 +1,13 @@
+<mat-card [ngClass]="{'currentTrack' : item.isCurrentlyPlaying}">
+  <mat-card-title>{{item.title}}</mat-card-title>
+  <mat-card-content>
+    {{item.artist}}
+    <button *ngIf="!isVoted" mat-mini-fab color="accent">
+      <mat-icon aria-hidden="false" (click)="vote()">favorite_border</mat-icon>
+    </button>
+    <button *ngIf="isVoted" mat-mini-fab color="accent">
+      <mat-icon aria-hidden="false" (click)="vote()">favorite</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
+<br />
